@@ -32,34 +32,18 @@
 
 ### Пример 0.1
 ```c#
-public static class IdGenerator
+public class Person
 {
-    private static int IdCounter {get; set;} = 0;
-
-    public static int GetNextId()
-    {
-        return IdCounter++;
-    }
-}
-
-public class Item
-{
-    public int Id {get;} = IdGenerator.GetNextId();
-
-    public string Name {get; set;} = string.Empty;
-
-    public int Cost {get; set;} = 0;
-}
-
-public void Demo()
-{
-    var item = new Item();
-    
     // При помощи механизма инкапсуляции, 
-    // мы поместили поля и методы в единую уникальную 
-    // область видимости, тем самым не пришлось реализовывать
-    // систему присваивания Id в клиентском коде
-    item.Id;
+    // мы поместили поля и методы (свойства) в единую уникальную 
+    // область видимости
+    private string _name;
+    private string _surname;
+    private int _age;
+
+    public string Name {get {...} set {...}}
+    public string Surname {get {...} set {...}}
+    public int Age {get {...} set {...}}
 }
 ```
 
